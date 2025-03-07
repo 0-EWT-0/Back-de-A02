@@ -5,7 +5,7 @@ const db = new sqlite3.Database("./database.sqlite", (err) => {
     console.error("Error conectando a SQLite:", err);
   } else {
     console.log("Conexión a SQLite exitosa.");
-    
+
     db.serialize(() => {
       db.run(`
         CREATE TABLE IF NOT EXISTS users (

@@ -11,6 +11,8 @@
   "author": "Ricardo Cruz",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "express": "^4.21.2",
@@ -18,5 +20,14 @@
     "sqlite3": "^5.1.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@scarf/scarf",
+      "sqlite3"
+    ]
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6"
   }
 }

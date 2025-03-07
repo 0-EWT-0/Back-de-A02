@@ -5,9 +5,10 @@ const db = require("./models/database");
 const itemsRoutes = require("./routes/itemsRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const logsRoutes = require("./routes/logsRoutes");
-const attackRoutes = require('./routes/attackRoutes');
+const attackRoutes = require("./routes/attackRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 const cors = require("cors");
+const jwtAuth = require("./middlewares/jwtAuth");
 
 const app = express();
 app.use(bodyParser.json());
@@ -20,10 +21,10 @@ app.get("/", (req, res) => {
 });
 
 // Rutas
-app.use("/items", itemsRoutes);
+app.use("/items", jwtAuth, itemsRoutes);
 app.use("/users", usersRoutes);
 app.use("/logs", logsRoutes);
-app.use('/attack', attackRoutes);
+app.use("/attack", attackRoutes);
 
 // Middleware de errores
 app.use(errorHandler);

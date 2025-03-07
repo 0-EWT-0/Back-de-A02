@@ -99,4 +99,22 @@ router.post("/logout", usersController.logoutUser);
 // Posible ataque: IDOR (Insecure Direct Object Reference)
 router.get("/user/:id", usersController.getUserById);
 
+/**
+ * @swagger
+ * /users/users:
+ *   get:
+ *     summary: Obtener todos los usuarios
+ *     tags: [Users]
+ *     responses:
+ *       200:
+ *         description: Lista de usuarios obtenida exitosamente
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ */
+// Posible ataque: Ninguno (si se valida correctamente la entrada)
+router.get("/users", usersController.getUsers);
 module.exports = router;

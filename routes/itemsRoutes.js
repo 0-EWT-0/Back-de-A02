@@ -117,7 +117,7 @@ router.delete("/:id", itemsController.deleteItemById);
 
 /**
  * @swagger
- * /allitems:
+ * /items:
  *   delete:
  *     summary: Eliminar todos los items
  *     tags: [Items]
